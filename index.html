@@ -138,13 +138,17 @@
 
   .splash-loader{
     position:absolute;
-    bottom:60px;
+    bottom: max(env(safe-area-inset-bottom), 36px);
     left:50%;
-    transform:translateX(-50%);
     display:flex;
     gap:6px;
     opacity:0;
-    animation: fadeUp .6s ease 2s forwards;
+    transform: translateX(-50%) translateY(8px);
+    animation: loaderIn .6s ease 2s forwards;
+  }
+  @keyframes loaderIn{
+    from{ opacity:0; transform: translateX(-50%) translateY(8px); }
+    to{ opacity:1; transform: translateX(-50%) translateY(0); }
   }
   .splash-loader span{
     width:6px; height:6px; border-radius:50%;
@@ -1169,6 +1173,7 @@
             <div class="infra-body">
               <div class="infra-name">
                 <span data-fr="7 box" data-en="7 boxes">7 box</span>
+                <span class="infra-price">800.–<small data-fr="/ mois" data-en="/ month">/ mois</small></span>
               </div>
               <div class="infra-sub" data-fr="Box classiques pour la pension de vos chevaux." data-en="Classic boxes for boarding your horses.">Box classiques pour la pension de vos chevaux.</div>
             </div>
@@ -1181,10 +1186,31 @@
                 <span data-fr="6 box terrasses" data-en="6 boxes with terrace">6 box terrasses</span>
                 <span class="infra-price">800.–<small data-fr="/ mois" data-en="/ month">/ mois</small></span>
               </div>
-              <div class="infra-feats">
-                <div class="feat" data-fr="🌾 Foin distribue 3× par jour" data-en="🌾 Hay served 3× a day">🌾 Foin distribué 3× par jour</div>
-                <div class="feat" data-fr="🌿 Sortie au parc en herbe la journee" data-en="🌿 Daily turnout in grass paddock">🌿 Sortie au parc en herbe la journée</div>
+              <div class="infra-sub" data-fr="Box avec terrasse exterieure pour plus de confort." data-en="Boxes with outdoor terrace for extra comfort.">Box avec terrasse extérieure pour plus de confort.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="infra-section">
+          <h3 data-fr="Prestations" data-en="Services">Prestations</h3>
+
+          <div class="infra-card">
+            <div class="infra-icon">🌾</div>
+            <div class="infra-body">
+              <div class="infra-name">
+                <span data-fr="Foin distribue 3× par jour" data-en="Hay served 3× a day">Foin distribué 3× par jour</span>
               </div>
+              <div class="infra-sub" data-fr="Distribution reguliere matin, midi et soir." data-en="Regular distribution morning, noon and evening.">Distribution régulière matin, midi et soir.</div>
+            </div>
+          </div>
+
+          <div class="infra-card">
+            <div class="infra-icon">🌿</div>
+            <div class="infra-body">
+              <div class="infra-name">
+                <span data-fr="Sortie au parc en herbe" data-en="Turnout in grass paddock">Sortie au parc en herbe</span>
+              </div>
+              <div class="infra-sub" data-fr="La journee complete pour le bien-etre des chevaux." data-en="Full day out for the horses' well-being.">La journée complète pour le bien-être des chevaux.</div>
             </div>
           </div>
         </div>
