@@ -825,6 +825,91 @@
   }
 
 
+
+  /* ===== Infrastructures ===== */
+  .infra-wrap{ padding:18px 18px 30px; }
+  .infra-section{
+    margin-bottom:20px;
+  }
+  .infra-section h3{
+    font-family:'Cinzel', serif;
+    font-size:11px;
+    letter-spacing:.3em;
+    color:var(--bronze);
+    text-transform:uppercase;
+    margin-bottom:14px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--line);
+  }
+  .infra-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:18px;
+    margin-bottom:12px;
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+  }
+  .infra-card.highlight{
+    border-color:var(--gold);
+    background: linear-gradient(160deg, var(--paper) 0%, var(--paper-2) 100%);
+  }
+  .infra-icon{
+    width:46px; height:46px;
+    border-radius:50%;
+    background: linear-gradient(135deg, var(--paper-2), #4A3826);
+    display:flex; align-items:center; justify-content:center;
+    font-size:22px;
+    color:var(--bronze);
+    flex-shrink:0;
+  }
+  .infra-body{ flex:1; }
+  .infra-name{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:10px;
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size:20px;
+    color:var(--ink);
+    line-height:1.2;
+  }
+  .infra-price{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size:20px;
+    color:var(--bronze-deep);
+    white-space:nowrap;
+  }
+  .infra-price small{
+    font-family:'Jost', sans-serif;
+    font-weight:400;
+    font-size:11px;
+    color:var(--muted);
+    margin-left:4px;
+  }
+  .infra-sub{
+    font-family:'Jost', sans-serif;
+    font-size:12px;
+    color:var(--ink-2);
+    margin-top:6px;
+    line-height:1.5;
+  }
+  .infra-feats{
+    margin-top:10px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+  .infra-feats .feat{
+    font-family:'Jost', sans-serif;
+    font-size:12.5px;
+    color:var(--ink-2);
+    line-height:1.5;
+  }
+
 </style>
 </head>
 <body>
@@ -886,6 +971,10 @@
           <div class="icon">✉</div>
           <div class="label" data-fr="Contact" data-en="Contact">Contact</div>
         </div>
+        <div class="menu-card full" onclick="go('infrastructures')">
+          <div class="icon">⌂</div>
+          <div class="label" data-fr="Infrastructures" data-en="Infrastructure">Infrastructures</div>
+        </div>
         <div class="menu-card full" onclick="go('location')">
           <div class="icon">⚐</div>
           <div class="label" data-fr="Localisation · Au château 8, Monnaz" data-en="Location · Au château 8, Monnaz">Localisation · Au château 8, Monnaz</div>
@@ -911,46 +1000,7 @@
         <div class="ornament"></div>
       </div>
       <div class="team-list">
-        <div class="pony-card pony-card-video" onclick="openVideo('linda')">
-          <div class="pony-photo pony-photo-video">
-            <img class="thumb" src="/images/linda-thumb.jpg" alt="Linda" />
-            <div class="play-overlay">
-              <div class="play-btn">▶</div>
-            </div>
-          </div>
-          <div class="pony-info">
-            <div class="pony-name">Linda</div>
-            <div class="pony-role" data-fr="Vidéo de présentation" data-en="Presentation video">Vidéo de présentation</div>
-            <div class="pony-desc" data-fr="Touchez pour découvrir Linda en vidéo" data-en="Tap to meet Linda in video">Touchez pour découvrir Linda en vidéo</div>
-          </div>
-        </div>
-        <div class="pony-card pony-card-video" onclick="openVideo('halia')">
-          <div class="pony-photo pony-photo-video">
-            <img class="thumb" src="/images/halia-thumb.jpg" alt="Halia" />
-            <div class="play-overlay">
-              <div class="play-btn">▶</div>
-            </div>
-          </div>
-          <div class="pony-info">
-            <div class="pony-name">Halia</div>
-            <div class="pony-role" data-fr="Vidéo de présentation" data-en="Presentation video">Vidéo de présentation</div>
-            <div class="pony-desc" data-fr="Touchez pour découvrir Halia en vidéo" data-en="Tap to meet Halia in video">Touchez pour découvrir Halia en vidéo</div>
-          </div>
-        </div>
-        <div class="pony-card pony-card-video" onclick="openVideo('middy')">
-          <div class="pony-photo pony-photo-video">
-            <img class="thumb" src="/images/middy-thumb.jpg" alt="Middy" />
-            <div class="play-overlay">
-              <div class="play-btn">▶</div>
-            </div>
-          </div>
-          <div class="pony-info">
-            <div class="pony-name">Middy</div>
-            <div class="pony-role" data-fr="Vidéo de présentation" data-en="Presentation video">Vidéo de présentation</div>
-            <div class="pony-desc" data-fr="Touchez pour découvrir Middy en vidéo" data-en="Tap to meet Middy in video">Touchez pour découvrir Middy en vidéo</div>
-          </div>
-        </div>
-        <div class="upload-hint" data-fr="Envoie-moi les photos des poneys et je les ajouterai ici" data-en="Send me pony photos and I'll add them here">Envoie-moi les photos des poneys et je les ajouterai ici</div>
+        <div class="upload-hint" data-fr="Les presentations de nos poneys arrivent bientot." data-en="Our pony introductions are coming soon.">Les presentations de nos poneys arrivent bientot.</div>
       </div>
     </div>
   </section>
@@ -1097,6 +1147,76 @@
     </div>
   </section>
 
+  <!-- ============ INFRASTRUCTURES ============ -->
+  <section class="screen" id="screen-infrastructures">
+    <div class="top-bar">
+      <div class="back" onclick="go('home')">‹</div>
+      <div class="title" data-fr="Infrastructures" data-en="Infrastructure">Infrastructures</div>
+    </div>
+    <div class="scroll-area">
+      <div class="page-hero">
+        <div class="kicker" data-fr="L'ecurie" data-en="The Stables">L'écurie</div>
+        <h1 data-fr="Nos infrastructures" data-en="Our Facilities">Nos infrastructures</h1>
+        <div class="ornament"></div>
+      </div>
+      <div class="infra-wrap">
+
+        <div class="infra-section">
+          <h3 data-fr="Pension" data-en="Boarding">Pension</h3>
+
+          <div class="infra-card">
+            <div class="infra-icon">⌂</div>
+            <div class="infra-body">
+              <div class="infra-name">
+                <span data-fr="7 box" data-en="7 boxes">7 box</span>
+              </div>
+              <div class="infra-sub" data-fr="Box classiques pour la pension de vos chevaux." data-en="Classic boxes for boarding your horses.">Box classiques pour la pension de vos chevaux.</div>
+            </div>
+          </div>
+
+          <div class="infra-card highlight">
+            <div class="infra-icon">⌂</div>
+            <div class="infra-body">
+              <div class="infra-name">
+                <span data-fr="6 box terrasses" data-en="6 boxes with terrace">6 box terrasses</span>
+                <span class="infra-price">800.–<small data-fr="/ mois" data-en="/ month">/ mois</small></span>
+              </div>
+              <div class="infra-feats">
+                <div class="feat" data-fr="🌾 Foin distribue 3× par jour" data-en="🌾 Hay served 3× a day">🌾 Foin distribué 3× par jour</div>
+                <div class="feat" data-fr="🌿 Sortie au parc en herbe la journee" data-en="🌿 Daily turnout in grass paddock">🌿 Sortie au parc en herbe la journée</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="infra-section">
+          <h3 data-fr="Installations" data-en="Facilities">Installations</h3>
+
+          <div class="infra-card">
+            <div class="infra-icon">▦</div>
+            <div class="infra-body">
+              <div class="infra-name">
+                <span data-fr="Carre de sable" data-en="Sand arena">Carré de sable</span>
+              </div>
+              <div class="infra-sub" data-fr="Espace de travail pour les seances d'equitation." data-en="Working area for riding sessions.">Espace de travail pour les séances d'équitation.</div>
+            </div>
+          </div>
+
+          <div class="infra-card">
+            <div class="infra-icon">◯</div>
+            <div class="infra-body">
+              <div class="infra-name">
+                <span data-fr="Rond de longe" data-en="Lunging ring">Rond de longe</span>
+              </div>
+              <div class="infra-sub" data-fr="Pour le travail a la longe et le debourrage." data-en="For lunging work and breaking-in.">Pour le travail à la longe et le débourrage.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ============ CONTACT ============ -->
   <section class="screen" id="screen-contact">
     <div class="top-bar">
@@ -1172,26 +1292,8 @@
 
   // === Pony videos (MP4 H.264 baseline) — Blob URLs on demand ===
   const PONY_VIDEOS = {
-    linda: {
-      name: "Linda",
-      birthYear: 2015,
-      desc_fr: "On vous présente Linda, ponette D espagnole de {age} ans.",
-      desc_en: "Meet Linda, a Spanish D-class pony, {age} years old.",
-      videoUrl: "/videos/linda.mp4"
-    },
-    halia: {
-      name: "Halia",
-      birthYear: 2020,
-      desc_fr: "On vous présente Halia, douce jument franches-montagnes suisse de {age} ans.",
-      desc_en: "Meet Halia, a gentle Swiss Franches-Montagnes mare, {age} years old.",
-      videoUrl: "/videos/halia.mp4"
-    },
-    middy: {
-      name: "Middy",
-      desc_fr: "On vous présente Middy.",
-      desc_en: "Meet Middy.",
-      videoUrl: "/videos/middy.mp4"
-    }
+    // Les poneys seront ajoutes ici quand les videos seront pretes.
+    // Format : id: { name, birthYear, desc_fr, desc_en, videoUrl }
   };
   function getPonyVideoUrl(id){
     const data = PONY_VIDEOS[id];
