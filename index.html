@@ -915,138 +915,6 @@
   }
 
 
-  /* ===== Flash promo screen ===== */
-  #screen-flash{
-    background: radial-gradient(ellipse at 50% 20%, #2A1E12 0%, #1A130C 60%, #0F0A07 100%);
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    padding: 40px 28px calc(40px + env(safe-area-inset-bottom));
-    overflow:hidden;
-    position:relative;
-  }
-  #screen-flash::before{
-    content:"";
-    position:absolute;
-    top:-40%; left:-40%;
-    width:180%; height:180%;
-    background: radial-gradient(circle at 30% 30%, rgba(216,180,136,0.08) 0%, transparent 50%),
-                radial-gradient(circle at 70% 70%, rgba(144,109,73,0.06) 0%, transparent 50%);
-    animation: flashPulse 6s ease-in-out infinite;
-    pointer-events:none;
-  }
-  @keyframes flashPulse{
-    0%,100%{ opacity:.6; transform: scale(1); }
-    50%{ opacity:1; transform: scale(1.05); }
-  }
-  .flash-wrap{
-    position:relative;
-    z-index:1;
-    text-align:center;
-    max-width: 360px;
-    width:100%;
-    animation: flashFadeIn 1s ease forwards;
-  }
-  @keyframes flashFadeIn{
-    from{ opacity:0; transform: translateY(20px); }
-    to{ opacity:1; transform: translateY(0); }
-  }
-  .flash-badge{
-    display:inline-block;
-    font-family:'Jost', sans-serif;
-    font-size:10px;
-    letter-spacing:.4em;
-    color: var(--gold);
-    padding: 7px 18px;
-    border: 1px solid var(--gold);
-    border-radius: 50px;
-    margin-bottom: 24px;
-    text-transform:uppercase;
-    background: rgba(216,180,136,0.05);
-  }
-  .flash-title{
-    font-family:'Cinzel', serif;
-    font-size: 34px;
-    color: var(--ivory);
-    line-height: 1.15;
-    letter-spacing: 0.04em;
-    margin-bottom: 10px;
-    font-weight:500;
-  }
-  .flash-accent{
-    font-family:'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 22px;
-    color: var(--gold);
-    margin-bottom: 28px;
-  }
-  .flash-ornament{
-    width:100px;
-    height:auto;
-    margin: 0 auto 28px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-  }
-  .flash-ornament .line{
-    flex:1;
-    height:1px;
-    background: linear-gradient(90deg, transparent, var(--bronze), transparent);
-  }
-  .flash-ornament .dot{
-    width:5px; height:5px;
-    border-radius:50%;
-    background: var(--gold);
-  }
-  .flash-dates{
-    font-family:'Cinzel', serif;
-    font-size: 18px;
-    color: var(--ivory);
-    letter-spacing: .15em;
-    margin-bottom: 6px;
-    font-weight:500;
-  }
-  .flash-dates strong{
-    font-weight:700;
-    color: var(--gold);
-  }
-  .flash-sub{
-    font-family:'Jost', sans-serif;
-    font-size: 13px;
-    color: var(--ink-2);
-    letter-spacing: .1em;
-    margin-bottom: 36px;
-    text-transform: uppercase;
-  }
-  .flash-pony-icon{
-    font-size: 56px;
-    margin-bottom: 20px;
-    filter: drop-shadow(0 4px 14px rgba(216,180,136,0.3));
-  }
-  .flash-btn{
-    display:inline-block;
-    width:100%;
-    max-width: 300px;
-    padding: 16px 28px;
-    background: linear-gradient(135deg, var(--gold) 0%, var(--bronze) 100%);
-    color: #1A130C;
-    font-family:'Cinzel', serif;
-    font-size: 13px;
-    letter-spacing: .25em;
-    text-transform: uppercase;
-    font-weight: 600;
-    border: none;
-    border-radius: 50px;
-    cursor:pointer;
-    box-shadow: 0 8px 22px rgba(216,180,136,0.2);
-    transition: transform .2s ease, box-shadow .2s ease;
-  }
-  .flash-btn:active{
-    transform: scale(0.97);
-    box-shadow: 0 4px 12px rgba(216,180,136,0.15);
-  }
 
 </style>
 </head>
@@ -1072,24 +940,6 @@
   </section>
 
   <!-- ============ HOME ============ -->
-  <!-- ============ FLASH PROMO ============ -->
-  <section class="screen" id="screen-flash">
-    <div class="flash-wrap">
-      <div class="flash-badge">Nouveauté · Été 2026</div>
-      <div class="flash-pony-icon">🐴</div>
-      <div class="flash-title">Stage Poney</div>
-      <div class="flash-accent">Une semaine au rythme des poneys</div>
-      <div class="flash-ornament">
-        <span class="line"></span>
-        <span class="dot"></span>
-        <span class="line"></span>
-      </div>
-      <div class="flash-dates">DU <strong>1ᵉʳ</strong> AU <strong>8 AOÛT</strong></div>
-      <div class="flash-sub">Places limitées · Monnaz</div>
-      <button class="flash-btn" onclick="go('home')">Découvrir</button>
-    </div>
-  </section>
-
   <section class="screen" id="screen-home">
     <div class="hero">
             <svg class="home-logo-svg" viewBox="0 0 1280 1024" preserveAspectRatio="xMidYMid meet" aria-label="Equi'Roul Club"><use href="#equiroulLogo"/></svg>
@@ -1526,10 +1376,9 @@
 
   setTimeout(() => {
     if(document.getElementById('screen-splash').classList.contains('active')){
-      go('flash');
+      go('home');
     }
   }, 5000);
 </script>
 </body>
 </html>
-
